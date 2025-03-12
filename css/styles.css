@@ -1,0 +1,242 @@
+:root {
+  --azul-oscuro: #1E1F2B;
+  --gris: #2A2939;
+  --amarillo: #FFD800;
+  --blanco: #F5F5F5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+header {
+  padding-bottom: 100px;
+}
+
+nav {
+  background-color: var(--gris);
+  border-bottom: 1px solid var(--amarillo);
+  box-shadow: 0 0 10px rgba(255, 216, 0, 0.8);
+}
+
+.navbar-stats {
+  display: flex;
+  align-items: center;
+  color: whitesmoke;
+  flex-wrap: wrap;
+}
+
+.navbar-stats span {
+  margin: 0 15px;
+  font-size: 18px;
+  position: relative;
+  padding: 0 10px;
+}
+
+.navbar-stats span:not(:last-child)::after {
+  content: '|';
+  position: absolute;
+  right: 0;
+  color: var(--amarillo);
+  font-size: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-stats span .number {
+  color: var(--amarillo);
+}
+
+.plan {
+  color: whitesmoke;
+  font-style: italic;
+}
+
+.it {
+  color: var(--amarillo);
+  font-weight: bold;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--azul-oscuro);
+}
+
+.container-agregar {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: var(--gris);
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: whitesmoke;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--amarillo);
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+#installButton, #shareButton {
+  padding: 6px 12px; 
+  font-size: 14px;   
+}
+
+#shareButton {
+  margin-left: 450px;
+}
+
+.btn-agregar:hover, .btn-:hover {
+  box-shadow: 0 0 20px rgba(255, 216, 0, 0.5);
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  width: 80%;
+  max-width: 600px;
+  padding: 10px;
+  background-color: var(--gris);
+  color: whitesmoke;
+  margin: auto;
+  font-weight: bold;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+li .task-number {
+  margin-right: 10px;
+  font-weight: bold;
+  padding-right: 10px;
+  border-right: 2px solid #FFD800;
+}
+
+li.completed .task-number {
+  border-right: 2px solid black;
+}
+
+li {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.task-text {
+  margin-left: 10px;
+  flex-grow: 1;
+  font-style: italic;
+}
+
+.complete-btn:hover, .edit-btn:hover, .delete-btn:hover {
+  color: var(--amarillo);
+}
+
+li, .complete-btn, .edit-btn, .delete-btn {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.complete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+.edit-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: whitesmoke;
+  margin-left: 10px;
+}
+
+.edit-input {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid var(--amarillo);
+  border-radius: 3px;
+  width: calc(100% - 20px);
+}
+
+.delete-btn {
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: whitesmoke;
+}
+
+.complete-btn.completed, .delete-btn.completed, .edit-btn.completed {
+  color: black;
+}
+
+li.completed {
+  background-color: var(--amarillo);
+  color: black;
+}
+
+.list-group {
+  margin-bottom: 140px;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: var(--gris);
+  border-top: 1px solid var(--amarillo);
+  box-shadow: 0 0 10px rgba(255, 216, 0, 0.8);
+}
+
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  #installButton {
+    display: none; 
+  }
+
+  .navbar-stats {
+    justify-content: flex-start; 
+  }
+
+  .navbar-stats span {
+    margin: 0 10px;
+  }
+
+  .navbar-stats span:not(:last-child)::after {
+    content: none; 
+  }
+}
